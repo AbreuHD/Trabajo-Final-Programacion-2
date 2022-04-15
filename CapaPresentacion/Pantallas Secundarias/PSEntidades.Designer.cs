@@ -368,9 +368,10 @@
             // 
             this.cBRolUserEntidad.FormattingEnabled = true;
             this.cBRolUserEntidad.Items.AddRange(new object[] {
-            "RNC",
-            "Cédula",
-            "Pasaporte"});
+            "Admin",
+            "Supervisor",
+            "User",
+            ""});
             this.cBRolUserEntidad.Location = new System.Drawing.Point(559, 200);
             this.cBRolUserEntidad.Name = "cBRolUserEntidad";
             this.cBRolUserEntidad.Size = new System.Drawing.Size(177, 21);
