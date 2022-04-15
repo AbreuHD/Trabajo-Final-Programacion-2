@@ -17,7 +17,6 @@ namespace CapaNegocio
         {
             DataTable tabla = new DataTable();
             tabla = objEntidad.Mostrar();
-            Console.WriteLine(tabla + " buenasCN");
             return tabla;
         }
     }
