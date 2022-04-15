@@ -13,23 +13,26 @@ namespace CapaPresentacion
 {
     public partial class FEntidades : Form
     {
-        CNEntidad objEntidad = new CNEntidad();
-
 
         public FEntidades()
         {
             InitializeComponent();
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
         }
+
 
         private void MostrarEntidades()
         {
-               
+            CNEntidad objEntidad = new CNEntidad();
+            dataGridView1.DataSource = objEntidad.MostrarEntidades();
+
         }
 
+        private void FEntidades_Load(object sender, EventArgs e)
+        {
+            MostrarEntidades();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e){        }
     }
 }

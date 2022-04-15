@@ -5,19 +5,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
-
+using CapaDatos;
 
 namespace CapaNegocio
 {
     public class CNEntidad
     {
-        private CapaDatos.CPEntidad objEntidad = new CapaDatos.CPEntidad();
+        private CDEntidad objEntidad = new CDEntidad();
         
         public DataTable MostrarEntidades()
         {
-            DataTable dt = new DataTable();
-            dt = objEntidad.Mostrar();
-            return dt;
+            DataTable tabla = new DataTable();
+            tabla = objEntidad.Mostrar();
+            Console.WriteLine(tabla + " buenasCN");
+            return tabla;
         }
     }
 }

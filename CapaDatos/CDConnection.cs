@@ -8,28 +8,23 @@ using System.Threading.Tasks;
 
 namespace CapaDatos
 {
-    public class CPConnection
+    public class CDConnection
     {
-        private SqlConnection Conexion = new SqlConnection("Server=localhost;Database=SellPoint;User Id=botabreuhd;Password=123");
+        private SqlConnection Conexion = new SqlConnection("Server=(local);DataBase= SellPoint;Integrated Security=true");
+        //Server=localhost;Database=SellPoint;User Id=botabreuhd;Password=123
+
 
         public SqlConnection AbrirConexion()
         {
             if (Conexion.State == ConnectionState.Closed)
-            {
                 Conexion.Open();
-            }
             return Conexion;
-
         }
-
         public SqlConnection CerrarConexion()
         {
-            if (Conexion.State == ConnectionState.Open) {
+            if (Conexion.State == ConnectionState.Open)
                 Conexion.Close();
-            }
             return Conexion;
         }
     }
-
-   
 }
