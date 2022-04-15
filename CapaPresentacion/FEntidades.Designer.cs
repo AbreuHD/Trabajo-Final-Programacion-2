@@ -61,6 +61,7 @@
             this.btEditar.TabIndex = 3;
             this.btEditar.Text = "Editar";
             this.btEditar.UseVisualStyleBackColor = true;
+            this.btEditar.Click += new System.EventHandler(this.btEditar_Click);
             // 
             // btEliminar
             // 
