@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaNegocio;
+using CapaPresentacion.Pantallas_Secundarias;
 
 namespace CapaPresentacion
 {
@@ -24,7 +25,7 @@ namespace CapaPresentacion
         private void MostrarEntidades()
         {
             CNEntidad objEntidad = new CNEntidad();
-            dataGridView1.DataSource = objEntidad.MostrarEntidades();
+            dGEntidades.DataSource = objEntidad.MostrarEntidades();
 
         }
 
@@ -33,6 +34,10 @@ namespace CapaPresentacion
             MostrarEntidades();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e){        }
+        private void btCrear_Click(object sender, EventArgs e)
+        {
+            PSEntidades crear = new PSEntidades("Crear Entidad");
+            crear.Show();
+        }
     }
 }

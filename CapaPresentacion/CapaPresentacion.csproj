@@ -52,10 +52,19 @@
     <Compile Include="FEntidades.Designer.cs">
       <DependentUpon>FEntidades.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pantallas Secundarias\PSEntidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas Secundarias\PSEntidades.Designer.cs">
+      <DependentUpon>PSEntidades.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FEntidades.resx">
       <DependentUpon>FEntidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas Secundarias\PSEntidades.resx">
+      <DependentUpon>PSEntidades.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
