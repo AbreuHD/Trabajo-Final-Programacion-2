@@ -13,16 +13,19 @@ namespace CapaPresentacion.Pantallas_Secundarias
 {
     public partial class PSEntidades : Form
     {
-        String tipo;
-        public PSEntidades(String tipo)
+        String accion;
+        String botonInfo;
+        public PSEntidades(String accion, String botonInfo)
         {
-            this.tipo = tipo;
+            this.accion = accion;
+            this.botonInfo = botonInfo;
             InitializeComponent();
         }
 
         private void PSEntidades_Load(object sender, EventArgs e)
         {
-            labelEntidades.Text = tipo;
+            labelEntidades.Text = accion;
+            btnAceptar.Text = botonInfo;
 
         }
 

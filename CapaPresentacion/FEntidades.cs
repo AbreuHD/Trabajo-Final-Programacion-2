@@ -36,7 +36,7 @@ namespace CapaPresentacion
 
         private void btCrear_Click(object sender, EventArgs e)
         {
-            PSEntidades crear = new PSEntidades("Crear Entidad");
+            PSEntidades crear = new PSEntidades("Crear Entidad", "Agregar");
             crear.Show();
         }
     }

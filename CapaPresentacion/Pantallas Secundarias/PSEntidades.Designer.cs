@@ -69,6 +69,7 @@
             this.rBEliminable = new System.Windows.Forms.RadioButton();
             this.nUDLimiteCredito = new System.Windows.Forms.NumericUpDown();
             this.lbLimiteCredito = new System.Windows.Forms.Label();
+            this.btnAceptar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nUDLimiteCredito)).BeginInit();
             this.SuspendLayout();
             // 
@@ -433,11 +434,21 @@
             this.lbLimiteCredito.TabIndex = 45;
             this.lbLimiteCredito.Text = "Limite del Credito";
             // 
+            // btnAceptar
+            // 
+            this.btnAceptar.Location = new System.Drawing.Point(571, 446);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(185, 33);
+            this.btnAceptar.TabIndex = 46;
+            this.btnAceptar.Text = "button1";
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            // 
             // PSEntidades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 476);
+            this.ClientSize = new System.Drawing.Size(800, 503);
+            this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.lbLimiteCredito);
             this.Controls.Add(this.nUDLimiteCredito);
             this.Controls.Add(this.rBEliminable);
@@ -531,5 +542,6 @@
         private System.Windows.Forms.RadioButton rBEliminable;
         private System.Windows.Forms.NumericUpDown nUDLimiteCredito;
         private System.Windows.Forms.Label lbLimiteCredito;
+        private System.Windows.Forms.Button btnAceptar;
     }
 }
