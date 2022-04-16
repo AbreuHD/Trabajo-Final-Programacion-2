@@ -28,7 +28,13 @@ namespace CapaPresentacion.Pantalla_Principales
         private void btCrear_Click(object sender, EventArgs e)
         {
             PSGrupoEntidades crear = new PSGrupoEntidades("Crear Grupo Entidades", "Crear");
-            crear.Show();
+            DialogResult dialogResult = crear.ShowDialog();
+            if (dialogResult == DialogResult.OK)
+            {
+                obtenerTabla();
+            }
+            //crear.Show();
+
         }
 
         public void obtenerTabla()
@@ -42,7 +48,12 @@ namespace CapaPresentacion.Pantalla_Principales
             if (dGVGruposEntidades.SelectedRows.Count > 0)
             {
                 PSGrupoEntidades editar = new PSGrupoEntidades("Editar Grupo Entidades", "Editar", dGVGruposEntidades.CurrentRow.Cells["IdGrupoEntidad"].Value.ToString());
-                editar.Show();
+                DialogResult dialogResult = editar.ShowDialog();
+                if (dialogResult == DialogResult.OK)
+                {
+                    obtenerTabla();
+                }
+                //editar.Show();
             }
             else
             {

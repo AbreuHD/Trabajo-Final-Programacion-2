@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaPresentacion;
 
 namespace CapaPresentacion.Pantallas_Secundarias
 {
@@ -18,7 +19,6 @@ namespace CapaPresentacion.Pantallas_Secundarias
         String id;
         String descripcion;
         String comentario;
-
 
         public PSGrupoEntidades(String accion, String btn, String id = "0", String descripcion = "", 
                                 String comentario = "")

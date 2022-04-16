@@ -37,7 +37,13 @@ namespace CapaPresentacion
         private void btCrear_Click(object sender, EventArgs e)
         {
             PSEntidades crear = new PSEntidades("Crear Entidad", "Agregar");
-            crear.Show();
+            DialogResult dialogResult  = crear.ShowDialog();
+            if (dialogResult == DialogResult.OK)
+            {
+                MostrarEntidades();
+            }
+            //crear.Show();
+
         }
 
         private void btEditar_Click(object sender, EventArgs e)
@@ -55,7 +61,12 @@ namespace CapaPresentacion
                 dGEntidades.CurrentRow.Cells["IdEntidad"].Value.ToString()
                 //dGEntidades.CurrentRow.Cells["NoEliminable"].Value.ToString()
                 );
-                editar.Show();
+                DialogResult dialogResult = editar.ShowDialog();
+                if (dialogResult == DialogResult.OK)
+                {
+                    MostrarEntidades();
+                }
+                //editar.Show();
             }
             else
             {

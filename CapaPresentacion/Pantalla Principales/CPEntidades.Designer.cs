@@ -73,7 +73,7 @@
             this.btEliminar.UseVisualStyleBackColor = true;
             this.btEliminar.Click += new System.EventHandler(this.btEliminar_Click);
             // 
-            // FEntidades
+            // CPEntidades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -82,7 +82,7 @@
             this.Controls.Add(this.btEditar);
             this.Controls.Add(this.btCrear);
             this.Controls.Add(this.dGEntidades);
-            this.Name = "FEntidades";
+            this.Name = "CPEntidades";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.FEntidades_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dGEntidades)).EndInit();

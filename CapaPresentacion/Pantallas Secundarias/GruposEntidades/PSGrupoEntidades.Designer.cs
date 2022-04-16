@@ -41,6 +41,7 @@
             // 
             // btnAceptar
             // 
+            this.btnAceptar.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnAceptar.Location = new System.Drawing.Point(193, 391);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(92, 31);
@@ -95,6 +96,7 @@
             // 
             // cBEstatus
             // 
+            this.cBEstatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBEstatus.FormattingEnabled = true;
             this.cBEstatus.Items.AddRange(new object[] {
             "Activa",
