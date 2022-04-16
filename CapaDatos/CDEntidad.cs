@@ -61,6 +61,7 @@ namespace CapaDatos
             comando.Parameters.AddWithValue("@NoEliminable", noEliminable);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
+            conexion.CerrarConexion();
         }
 
         public void Insertar(String userNameEntidad, String passworEntidad, String descripcion,
@@ -98,16 +99,18 @@ namespace CapaDatos
             comando.Parameters.AddWithValue("@FechaRegistro", DateTime.Now.ToString());
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
+            conexion.CerrarConexion();
         }
         
-        public bool Eliminar(int ID)
+        public bool Eliminar(int id)
         {   
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "SpEntidadEliminar";
             comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@IdEntidad", ID);
+            comando.Parameters.AddWithValue("@IdEntidad", id);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
+            conexion.CerrarConexion();
             return true;
         }
     }

@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="CDConnection.cs" />
     <Compile Include="CDEntidad.cs" />
+    <Compile Include="CDGruposEntidades.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
