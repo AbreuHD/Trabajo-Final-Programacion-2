@@ -11,8 +11,7 @@ namespace CapaDatos
     public class CDConnection
     {
         private SqlConnection Conexion = new SqlConnection("Server=(local);DataBase= SellPoint;Integrated Security=true");
-        //Server=localhost;Database=SellPoint;User Id=botabreuhd;Password=123
-
+       
 
         public SqlConnection AbrirConexion()
         {

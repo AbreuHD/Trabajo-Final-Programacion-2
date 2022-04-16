@@ -174,10 +174,11 @@
             // 
             // cBTipoEntidad
             // 
+            this.cBTipoEntidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBTipoEntidad.FormattingEnabled = true;
             this.cBTipoEntidad.Items.AddRange(new object[] {
-            "Jurídica",
-            "Física"});
+            "Fisico",
+            "Juridico"});
             this.cBTipoEntidad.Location = new System.Drawing.Point(66, 346);
             this.cBTipoEntidad.Name = "cBTipoEntidad";
             this.cBTipoEntidad.Size = new System.Drawing.Size(177, 21);
@@ -185,6 +186,7 @@
             // 
             // cBTipoDeDocumento
             // 
+            this.cBTipoDeDocumento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBTipoDeDocumento.FormattingEnabled = true;
             this.cBTipoDeDocumento.Items.AddRange(new object[] {
             "RNC",
@@ -309,11 +311,11 @@
             // 
             // cBGrupoEntidad
             // 
+            this.cBGrupoEntidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBGrupoEntidad.FormattingEnabled = true;
             this.cBGrupoEntidad.Items.AddRange(new object[] {
-            "RNC",
-            "Cédula",
-            "Pasaporte"});
+            "1",
+            "2"});
             this.cBGrupoEntidad.Location = new System.Drawing.Point(317, 399);
             this.cBGrupoEntidad.Name = "cBGrupoEntidad";
             this.cBGrupoEntidad.Size = new System.Drawing.Size(177, 21);
@@ -355,11 +357,11 @@
             // 
             // cBIDTipoEntidad
             // 
+            this.cBIDTipoEntidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBIDTipoEntidad.FormattingEnabled = true;
             this.cBIDTipoEntidad.Items.AddRange(new object[] {
-            "RNC",
-            "Cédula",
-            "Pasaporte"});
+            "1",
+            "2"});
             this.cBIDTipoEntidad.Location = new System.Drawing.Point(559, 154);
             this.cBIDTipoEntidad.Name = "cBIDTipoEntidad";
             this.cBIDTipoEntidad.Size = new System.Drawing.Size(177, 21);
@@ -367,6 +369,7 @@
             // 
             // cBRolUserEntidad
             // 
+            this.cBRolUserEntidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBRolUserEntidad.FormattingEnabled = true;
             this.cBRolUserEntidad.Items.AddRange(new object[] {
             "Admin",
@@ -389,6 +392,7 @@
             // 
             // cBStatus
             // 
+            this.cBStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBStatus.FormattingEnabled = true;
             this.cBStatus.Items.AddRange(new object[] {
             "Activa",
@@ -421,9 +425,19 @@
             // nUDLimiteCredito
             // 
             this.nUDLimiteCredito.Location = new System.Drawing.Point(559, 297);
+            this.nUDLimiteCredito.Maximum = new decimal(new int[] {
+            -1530494977,
+            232830,
+            0,
+            131072});
             this.nUDLimiteCredito.Name = "nUDLimiteCredito";
             this.nUDLimiteCredito.Size = new System.Drawing.Size(177, 20);
             this.nUDLimiteCredito.TabIndex = 44;
+            this.nUDLimiteCredito.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // lbLimiteCredito
             // 
@@ -442,6 +456,7 @@
             this.btnAceptar.TabIndex = 46;
             this.btnAceptar.Text = "button1";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // PSEntidades
             // 

@@ -1,6 +1,6 @@
 ﻿namespace CapaPresentacion
 {
-    partial class FEntidades
+    partial class CPEntidades
     {
         /// <summary>
         /// Required designer variable.
@@ -71,6 +71,7 @@
             this.btEliminar.TabIndex = 4;
             this.btEliminar.Text = "Eliminar";
             this.btEliminar.UseVisualStyleBackColor = true;
+            this.btEliminar.Click += new System.EventHandler(this.btEliminar_Click);
             // 
             // FEntidades
             // 
