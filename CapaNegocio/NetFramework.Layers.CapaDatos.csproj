@@ -46,9 +46,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">
+    <ProjectReference Include="..\CapaDatos\NetFramework.Layers.ADO.Net.csproj">
       <Project>{9526541f-8c92-468d-899c-00beac74ae70}</Project>
-      <Name>CapaDatos</Name>
+      <Name>NetFramework.Layers.ADO.Net</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

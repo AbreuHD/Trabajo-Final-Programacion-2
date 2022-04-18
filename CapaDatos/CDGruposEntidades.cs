@@ -5,8 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using NetFramework.Layers.ADO.Net;
+using CapaDatos;
 
-namespace CapaDatos
+namespace NetFramework.Layers.ADO.Net.CapaDatos
 {
     public class CDGruposEntidades
     {

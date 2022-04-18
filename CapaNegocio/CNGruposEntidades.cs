@@ -5,13 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
-using CapaDatos;
+using NetFramework.Layers.ADO.Net.CapaNegocio;
 
-namespace CapaNegocio
+namespace NetFramework.Layers.ADO.Net.CapaNegocio
 {
     public class CNGruposEntidades
     {
-        private CDGruposEntidades objGrupoEntidades = new CDGruposEntidades();
+        private CapaDatos.CDGruposEntidades objGrupoEntidades = new CapaDatos.CDGruposEntidades();
         public DataTable MostrarEntidades()
         {
             DataTable tabla = new DataTable();

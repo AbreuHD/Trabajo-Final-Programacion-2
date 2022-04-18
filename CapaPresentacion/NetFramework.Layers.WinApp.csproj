@@ -107,9 +107,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CapaNegocio\CapaNegocio.csproj">
+    <ProjectReference Include="..\CapaNegocio\NetFramework.Layers.CapaDatos.csproj">
       <Project>{6fc3d014-8089-4afd-89d8-de14eeb3589e}</Project>
-      <Name>CapaNegocio</Name>
+      <Name>NetFramework.Layers.CapaDatos</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

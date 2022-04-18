@@ -13,7 +13,7 @@ namespace CapaPresentacion.Pantallas_Secundarias
 {
     public partial class PSGrupoEntidades : Form
     {
-        CapaNegocio.CNGruposEntidades objeGrupoEntidades = new CapaNegocio.CNGruposEntidades();
+        NetFramework.Layers.ADO.Net.CapaNegocio.CNGruposEntidades objeGrupoEntidades = new NetFramework.Layers.ADO.Net.CapaNegocio.CNGruposEntidades();
         String accion;
         String btn;
         String id;

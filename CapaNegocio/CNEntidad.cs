@@ -7,7 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using CapaDatos;
 
-namespace CapaNegocio
+namespace NetFramework.Layers.ADO.Net.CapaNegocio
 {
     public class CNEntidad
     {

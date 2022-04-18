@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CapaNegocio;
 using CapaPresentacion.Pantallas_Secundarias;
+using NetFramework.Layers.ADO.Net.CapaNegocio;
 
 namespace CapaPresentacion.Pantallas_Secundarias
 {

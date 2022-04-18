@@ -7,8 +7,8 @@
     <ProjectGuid>{9526541F-8C92-468D-899C-00BEAC74AE70}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CapaDatos</RootNamespace>
-    <AssemblyName>CapaDatos</AssemblyName>
+    <RootNamespace>NetFramework.Layers.ADO.Net</RootNamespace>
+    <AssemblyName>NetFramework.Layers.ADO.Net</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
