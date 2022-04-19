@@ -126,7 +126,7 @@
             this.cBEliminable.Text = "Eliminable";
             this.cBEliminable.UseVisualStyleBackColor = true;
             // 
-            // PSGrupoEntidades
+            // PSTiposEntidades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -140,7 +140,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbInfoPantalla);
             this.Controls.Add(this.btnAceptar);
-            this.Name = "PSGrupoEntidades";
+            this.Name = "PSTiposEntidades";
             this.Text = "PSGrupoEntidades";
             this.Load += new System.EventHandler(this.PSGrupoEntidades_Load);
             this.ResumeLayout(false);

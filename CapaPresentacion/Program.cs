@@ -16,7 +16,7 @@ namespace CapaPresentacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CapaPresentacion.Pantalla_Principales.CPGruposEntidades());
+            Application.Run(new Pantalla_Principales.CPTipoEntidad());
         }
     }
 }

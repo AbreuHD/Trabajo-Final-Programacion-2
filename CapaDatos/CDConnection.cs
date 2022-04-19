@@ -5,13 +5,14 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Configuration;
 
 namespace CapaDatos
 {
     public class CDConnection
     {
-        private SqlConnection Conexion = new SqlConnection("Server=(local);DataBase= SellPoint;Integrated Security=true");
-       
+        private SqlConnection Conexion = new SqlConnection(ConfigurationManager.ConnectionStrings["Database"].ConnectionString);
+        //new SqlConnection("Server=(local);DataBase= SellPoint;Integrated Security=true");
 
         public SqlConnection AbrirConexion()
         {
@@ -20,7 +21,7 @@ namespace CapaDatos
             return Conexion;
         }
         public SqlConnection CerrarConexion()
-        {
+        {   
             if (Conexion.State == ConnectionState.Open)
                 Conexion.Close();
             return Conexion;

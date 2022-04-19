@@ -7,20 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CapaPresentacion;
+using NetFramework.Layers.CapaDatos;
 
-namespace CapaPresentacion.Pantallas_Secundarias
+namespace CapaPresentacion.Pantallas_Secundarias.TiposEntidades
 {
-    public partial class PSGrupoEntidades : Form
+    public partial class PSTiposEntidades : Form
     {
-        NetFramework.Layers.ADO.Net.CapaNegocio.CNGruposEntidades objeGrupoEntidades = new NetFramework.Layers.ADO.Net.CapaNegocio.CNGruposEntidades();
         String accion;
         String btn;
         String id;
         String descripcion;
         String comentario;
-
-        public PSGrupoEntidades(String accion, String btn, String id = "0", String descripcion = "", 
+        CNTipoEntidad objTipoEntidad = new CNTipoEntidad(); 
+        public PSTiposEntidades(String accion, String btn, String id = "0", String descripcion = "",
                                 String comentario = "")
         {
             this.descripcion = descripcion;
@@ -28,13 +27,21 @@ namespace CapaPresentacion.Pantallas_Secundarias
             this.id = id;
             this.accion = accion;
             this.btn = btn;
+
             InitializeComponent();
         }
 
-
-        private void button1_Click(object sender, EventArgs e)
+        private void PSTiposEntidades_Load(object sender, EventArgs e)
         {
-            
+            tBComentario.Text = comentario;
+            tbDescripcion.Text = descripcion;
+            lbPrincipal.Text = accion;
+            btnAceptar.Text = btn;
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+
             int eliminable = 0;
 
             if (cBEstatus.Enabled)
@@ -45,29 +52,20 @@ namespace CapaPresentacion.Pantallas_Secundarias
             }
             else { eliminable = 0; }
 
-            if (lbInfoPantalla.Text == "Crear Grupo Entidades")
+            if (lbPrincipal.Text == "Crear tipo entidades")
             {
-                if (objeGrupoEntidades.AddDatos(tBDescripcion.Text, tBComentario.Text, cBEstatus.Text, eliminable))
+                if (objTipoEntidad.AddTipos(tbDescripcion.Text,cBGrupoEntidad.Text,tBComentario.Text, cBEstatus.Text, eliminable))
                 {
                     MessageBox.Show("Se ha creado con exito");
                 }
-            }else
+            }
+            else
             {
-                if (objeGrupoEntidades.EditDatos(id, tBDescripcion.Text, tBComentario.Text, cBEstatus.Text, eliminable))
+                if (objTipoEntidad.EditTipos(id, tbDescripcion.Text, cBGrupoEntidad.Text, tBComentario.Text, cBEstatus.Text, eliminable))
                 {
                     MessageBox.Show("Se ha editado con exito");
                 }
             }
         }
-
-        private void PSGrupoEntidades_Load(object sender, EventArgs e)
-        {
-            lbInfoPantalla.Text = accion;
-            btnAceptar.Text = btn;
-            tBDescripcion.Text = descripcion;
-            tBComentario.Text = comentario;
-        }
-
-
     }
 }

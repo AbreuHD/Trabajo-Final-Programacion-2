@@ -7,8 +7,8 @@
     <ProjectGuid>{6FC3D014-8089-4AFD-89D8-DE14EEB3589E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CapaNegocio</RootNamespace>
-    <AssemblyName>CapaNegocio</AssemblyName>
+    <RootNamespace>NetFramework.Layers.CapaDatos</RootNamespace>
+    <AssemblyName>NetFramework.Layers.CapaDatos</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="CNEntidad.cs" />
     <Compile Include="CNGruposEntidades.cs" />
+    <Compile Include="CNTipoEntidad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

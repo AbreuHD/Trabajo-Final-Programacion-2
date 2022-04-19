@@ -11,6 +11,7 @@ using NetFramework.Layers.ADO.Net;
 using CapaPresentacion.Pantallas_Secundarias;
 using NetFramework.Layers.ADO.Net.CapaNegocio;
 
+
 namespace CapaPresentacion.Pantalla_Principales
 {
     public partial class CPGruposEntidades : Form
