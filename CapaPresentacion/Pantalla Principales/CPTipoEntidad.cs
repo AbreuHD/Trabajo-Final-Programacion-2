@@ -49,7 +49,9 @@ namespace CapaPresentacion.Pantalla_Principales
             {
                 Pantallas_Secundarias.TiposEntidades.PSTiposEntidades editar = new Pantallas_Secundarias.TiposEntidades.PSTiposEntidades(
                                                                           "Editar tipo entidades", "Editar", dGVTipoEntidad.CurrentRow.Cells["IdTipoEntidad"].Value.ToString(),
-                                                                           dGVTipoEntidad.CurrentRow.Cells["Descripcion"].Value.ToString(), dGVTipoEntidad.CurrentRow.Cells["Comentario"].Value.ToString());
+                                                                           dGVTipoEntidad.CurrentRow.Cells["Descripcion"].Value.ToString(), dGVTipoEntidad.CurrentRow.Cells["Comentario"].Value.ToString(),
+                                                                           dGVTipoEntidad.CurrentRow.Cells["SStatus"].Value.ToString(), dGVTipoEntidad.CurrentRow.Cells["NoEliminable"].Value.ToString(),
+                                                                           dGVTipoEntidad.CurrentRow.Cells["IdGrupoEntidad"].Value.ToString());
                 DialogResult dialogResult = editar.ShowDialog();
                 if (dialogResult == DialogResult.OK)
                 {
@@ -70,6 +72,7 @@ namespace CapaPresentacion.Pantalla_Principales
                     MessageBox.Show("Eliminacion exitosa");
                     MostrarTabla();
                 }
+                else { MessageBox.Show("Ha ocurrido un error inesperado, no se a podido eliminar el dato."); }
             }
             else
             {

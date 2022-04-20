@@ -15,12 +15,10 @@ namespace NetFramework.Layers.ADO.Net.CapaNegocio
         
         public DataTable MostrarEntidades()
         {
-            DataTable tabla = new DataTable();
-            tabla = objEntidad.Mostrar();
-            return tabla;
+            return objEntidad.Mostrar(); ;
         }
 
-        public void Editar( int id, String userNameEntidad, String passworEntidad, String descripcion,
+        public bool Editar( int id, String userNameEntidad, String passworEntidad, String descripcion,
                             String direccion, String localidad, String tipoEntidad, String tipoDocumento,
                             String telefono, String uRLPaginaWeb, String uRLFacebook,
                             String numeroDocumento, String uRLInstagram, String uRLTwitter, String uRLTikTok,
@@ -28,24 +26,21 @@ namespace NetFramework.Layers.ADO.Net.CapaNegocio
                             String rolUserEntidad, int noEliminable)
 
         {
-            int idEntidad = int.Parse(idTipoEntidad);
-            int intidGrupoEntidad = int.Parse(idGrupoEntidad);
-
-            objEntidad.Editar(id, userNameEntidad, passworEntidad, descripcion,
+            return objEntidad.Editar(id, userNameEntidad, passworEntidad, descripcion,
                               direccion, localidad, tipoEntidad, tipoDocumento,
                               telefono, uRLPaginaWeb, uRLFacebook,
                               numeroDocumento, uRLInstagram, uRLTwitter, uRLTikTok,
-                              comentario, idEntidad, int.Parse(limiteCredito), intidGrupoEntidad, sStatus, rolUserEntidad, noEliminable);
+                              comentario, int.Parse(idTipoEntidad), int.Parse(limiteCredito), int.Parse(idGrupoEntidad), sStatus, rolUserEntidad, noEliminable);
         }
 
-        public void Crear(String userNameEntidad, String passworEntidad, String descripcion,
+        public bool Crear(String userNameEntidad, String passworEntidad, String descripcion,
                           String direccion, String localidad, String tipoEntidad, String tipoDocumento,
                           String telefono, String uRLPaginaWeb, String uRLFacebook,
                           String numeroDocumento, String uRLInstagram, String uRLTwitter, String uRLTikTok,
                           String comentario, String idTipoEntidad, String limiteCredito, String idGrupoEntidad, String sStatus,
                           String rolUserEntidad, int noEliminable)
         {
-            objEntidad.Insertar(userNameEntidad, passworEntidad, descripcion,
+            return objEntidad.Insertar(userNameEntidad, passworEntidad, descripcion,
                                 direccion, localidad, tipoEntidad, tipoDocumento,
                                 telefono, uRLPaginaWeb, uRLFacebook,
                                 numeroDocumento, uRLInstagram, uRLTwitter, uRLTikTok,

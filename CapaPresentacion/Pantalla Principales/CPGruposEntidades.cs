@@ -49,7 +49,9 @@ namespace CapaPresentacion.Pantalla_Principales
         {
             if (dGVGruposEntidades.SelectedRows.Count > 0)
             {
-                PSGrupoEntidades editar = new PSGrupoEntidades("Editar Grupo Entidades", "Editar", dGVGruposEntidades.CurrentRow.Cells["IdGrupoEntidad"].Value.ToString());
+                PSGrupoEntidades editar = new PSGrupoEntidades("Editar Grupo Entidades", "Editar", dGVGruposEntidades.CurrentRow.Cells["IdGrupoEntidad"].Value.ToString(),
+                                                                dGVGruposEntidades.CurrentRow.Cells["Descripcion"].Value.ToString(), dGVGruposEntidades.CurrentRow.Cells["Comentario"].Value.ToString(),
+                                                                dGVGruposEntidades.CurrentRow.Cells["SStatus"].Value.ToString(), dGVGruposEntidades.CurrentRow.Cells["NoEliminable"].Value.ToString());
                 DialogResult dialogResult = editar.ShowDialog();
                 if (dialogResult == DialogResult.OK)
                 {
@@ -73,6 +75,7 @@ namespace CapaPresentacion.Pantalla_Principales
                     MessageBox.Show("La eliminacion Fue Exitosa");
                     obtenerTabla();
                 }
+                else { MessageBox.Show("Ha ocurrido un error inesperado, no se a eliminado el dato.");  }
             }
             else
             {

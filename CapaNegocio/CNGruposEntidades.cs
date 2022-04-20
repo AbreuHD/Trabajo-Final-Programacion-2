@@ -14,9 +14,7 @@ namespace NetFramework.Layers.ADO.Net.CapaNegocio
         private CapaDatos.CDGruposEntidades objGrupoEntidades = new CapaDatos.CDGruposEntidades();
         public DataTable MostrarEntidades()
         {
-            DataTable tabla = new DataTable();
-            tabla = objGrupoEntidades.Mostrar();
-            return tabla;
+            return objGrupoEntidades.Mostrar();
         }
 
         public bool AddDatos(String descripcion, String comentario, String sStatus, int noEliminable) {

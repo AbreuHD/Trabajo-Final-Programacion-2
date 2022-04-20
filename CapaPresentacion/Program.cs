@@ -16,7 +16,9 @@ namespace CapaPresentacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Pantalla_Principales.CPTipoEntidad());
+            NetFramework.Layers.WinApp.Login login = new NetFramework.Layers.WinApp.Login();
+            login.Show();
+            Application.Run();
         }
     }
 }

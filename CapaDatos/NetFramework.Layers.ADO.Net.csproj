@@ -63,6 +63,7 @@
     <Compile Include="CDConnection.cs" />
     <Compile Include="CDEntidad.cs" />
     <Compile Include="CDGruposEntidades.cs" />
+    <Compile Include="CDLogin.cs" />
     <Compile Include="CDTipoEntidad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

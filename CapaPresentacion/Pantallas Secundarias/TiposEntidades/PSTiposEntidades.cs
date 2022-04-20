@@ -18,37 +18,51 @@ namespace CapaPresentacion.Pantallas_Secundarias.TiposEntidades
         String id;
         String descripcion;
         String comentario;
+        String estatus;
+        bool check;
+        int grupoEntidad;
         CNTipoEntidad objTipoEntidad = new CNTipoEntidad(); 
         public PSTiposEntidades(String accion, String btn, String id = "0", String descripcion = "",
-                                String comentario = "")
+                                String comentario = "", String estatus = "Activa", String check = "false", String grupoEntidad = "1")
         {
             this.descripcion = descripcion;
             this.comentario = comentario;
             this.id = id;
             this.accion = accion;
             this.btn = btn;
-
+            this.estatus = estatus;
+            this.check = Convert.ToBoolean(check.ToLower());
+            this.grupoEntidad = Convert.ToInt32(grupoEntidad);
             InitializeComponent();
         }
 
         private void PSTiposEntidades_Load(object sender, EventArgs e)
         {
+            if (estatus == "Activa")
+            {
+                cBEstatus.SelectedIndex = 0;
+            }
+            else { cBEstatus.SelectedIndex = 1; }
+
+            if (check)
+            {
+                cBEliminable.Checked = true;
+            }
+            cBGrupoEntidad.SelectedIndex = grupoEntidad-1;
             tBComentario.Text = comentario;
             tbDescripcion.Text = descripcion;
             lbPrincipal.Text = accion;
             btnAceptar.Text = btn;
+            //cBEliminable.
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-
             int eliminable = 0;
 
-            if (cBEstatus.Enabled)
+            if (cBEliminable.Checked)
             {
-                MessageBox.Show(eliminable + " no soy elimiable e");
                 eliminable = 1;
-
             }
             else { eliminable = 0; }
 
@@ -58,6 +72,7 @@ namespace CapaPresentacion.Pantallas_Secundarias.TiposEntidades
                 {
                     MessageBox.Show("Se ha creado con exito");
                 }
+                else { MessageBox.Show("Ha ocurrido un error, no se a podio crear."); }
             }
             else
             {
@@ -65,6 +80,7 @@ namespace CapaPresentacion.Pantallas_Secundarias.TiposEntidades
                 {
                     MessageBox.Show("Se ha editado con exito");
                 }
+                else { MessageBox.Show("Ha ocurrido un error, no se a podido editar."); }
             }
         }
     }

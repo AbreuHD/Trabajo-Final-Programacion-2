@@ -19,15 +19,19 @@ namespace CapaPresentacion.Pantallas_Secundarias
         String id;
         String descripcion;
         String comentario;
+        String estatus;
+        bool check;
 
-        public PSGrupoEntidades(String accion, String btn, String id = "0", String descripcion = "", 
-                                String comentario = "")
+        public PSGrupoEntidades(String accion, String btn, String id = "0", String descripcion = "",
+                                String comentario = "", String estatus = "Activa", String check = "false")
         {
             this.descripcion = descripcion;
             this.comentario = comentario;
             this.id = id;
             this.accion = accion;
             this.btn = btn;
+            this.estatus = estatus;
+            this.check = Convert.ToBoolean(check.ToLower());
             InitializeComponent();
         }
 
@@ -39,7 +43,6 @@ namespace CapaPresentacion.Pantallas_Secundarias
 
             if (cBEstatus.Enabled)
             {
-                MessageBox.Show(eliminable + " no soy elimiable e");
                 eliminable = 1;
 
             }
@@ -51,17 +54,31 @@ namespace CapaPresentacion.Pantallas_Secundarias
                 {
                     MessageBox.Show("Se ha creado con exito");
                 }
+                else { MessageBox.Show("Ha ocurrido un error, no se a podido crear."); }
             }else
             {
                 if (objeGrupoEntidades.EditDatos(id, tBDescripcion.Text, tBComentario.Text, cBEstatus.Text, eliminable))
                 {
                     MessageBox.Show("Se ha editado con exito");
                 }
+                else { MessageBox.Show("Ha ocurrido un error, no se a podido editar."); }
             }
         }
 
         private void PSGrupoEntidades_Load(object sender, EventArgs e)
         {
+            if(estatus == "Activa")
+            {
+                cBEstatus.SelectedIndex = 0;
+            }
+            else { cBEstatus.SelectedIndex = 1; }
+
+            if(check)
+            {
+                cBEliminable.Checked = true;
+            }
+            else { cBEliminable.Checked = false; }
+
             lbInfoPantalla.Text = accion;
             btnAceptar.Text = btn;
             tBDescripcion.Text = descripcion;

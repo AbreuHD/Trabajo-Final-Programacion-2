@@ -62,9 +62,9 @@ namespace CapaPresentacion.Pantallas_Secundarias
             this.passworEntidad = passworEntidad;
             this.descripcion = descripcion;
             this.direccion = direccion;
-            this.localidad = localidad;//a
+            this.localidad = localidad;
             //this.tipoEntidad = tipoEntidad;
-            //this.tipoDocumento = tipoDocumento;//a
+            //this.tipoDocumento = tipoDocumento;
             this.numeroDocumento = (int)Convert.ToInt64(numeroDocumento);
             this.telefono = telefono;
             this.uRLPaginaWeb = uRLPaginaWeb;
@@ -100,17 +100,12 @@ namespace CapaPresentacion.Pantallas_Secundarias
             tBTwitter.Text = uRLTwitter;
             tBTikTok.Text = uRLTikTok;
             tBComentario.Text = comentario;
-
-            /*if(noEliminable == 1)
-            {
-                rBEliminable.Select();
-            }*/
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             int eliminable = 0;
-            if (rBEliminable.Checked = true)
+            if (rBEliminable.Checked == true)
             {
                 eliminable = 1;
             }
@@ -121,20 +116,25 @@ namespace CapaPresentacion.Pantallas_Secundarias
 
             if (accion == "Editar Entidades")
             {
-                MessageBox.Show(cBTipoEntidad.Text + " ga");
-               objEntidad.Editar(id, tBUsuario.Text, tBPassword.Text, tBDescripcion.Text, tbDireccion.Text, tBLocalidad.Text, cBTipoEntidad.Text,
+               if(objEntidad.Editar(id, tBUsuario.Text, tBPassword.Text, tBDescripcion.Text, tbDireccion.Text, tBLocalidad.Text, cBTipoEntidad.Text,
                                   cBTipoDeDocumento.Text, tBTelefono.Text, tBPaginaWeb.Text, tBFacebook.Text, tBNumeroDocumento.Text,
                                   tBInstagram.Text, tBTwitter.Text, tBTikTok.Text, tBComentario.Text, cBIDTipoEntidad.Text, nUDLimiteCredito.Value.ToString(),
-                                  cBGrupoEntidad.Text, cBStatus.Text, cBRolUserEntidad.Text, eliminable);
+                                  cBGrupoEntidad.Text, cBStatus.Text, cBRolUserEntidad.Text, eliminable))
+                {
+                    MessageBox.Show("Editado con exito");
+                }
+                else { MessageBox.Show("Ha ocurrido un error y no se a podido editar."); }
             }
             else
             {
-
-                MessageBox.Show("Aqui estoy");
-                objEntidad.Crear( tBUsuario.Text, tBPassword.Text, tBDescripcion.Text, tbDireccion.Text, tBLocalidad.Text, cBTipoEntidad.Text,
+                if (objEntidad.Crear(tBUsuario.Text, tBPassword.Text, tBDescripcion.Text, tbDireccion.Text, tBLocalidad.Text, cBTipoEntidad.Text,
                                   cBTipoDeDocumento.Text, tBTelefono.Text, tBPaginaWeb.Text, tBFacebook.Text, tBNumeroDocumento.Text,
                                   tBInstagram.Text, tBTwitter.Text, tBTikTok.Text, tBComentario.Text, cBIDTipoEntidad.Text, "1",
-                                  cBGrupoEntidad.Text, cBStatus.Text, cBRolUserEntidad.Text, eliminable);
+                                  cBGrupoEntidad.Text, cBStatus.Text, cBRolUserEntidad.Text, eliminable))
+                {
+                    MessageBox.Show("Creacion Exitosa.");
+                }
+                else { MessageBox.Show("Ha ocurrido un error, no se a podido crear."); }
             }
             
         }

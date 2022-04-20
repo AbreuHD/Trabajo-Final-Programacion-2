@@ -84,6 +84,7 @@ namespace CapaPresentacion
                     MessageBox.Show("Se ha eliminado correctamente");
                     MostrarEntidades();
                 }
+                else { MessageBox.Show("A ocurrido un error inesperado, no se a podido eliminar."); }
             }
             else
             {
