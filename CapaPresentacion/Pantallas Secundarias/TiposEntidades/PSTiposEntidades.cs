@@ -23,7 +23,7 @@ namespace CapaPresentacion.Pantallas_Secundarias.TiposEntidades
         int grupoEntidad;
         CNTipoEntidad objTipoEntidad = new CNTipoEntidad(); 
         public PSTiposEntidades(String accion, String btn, String id = "0", String descripcion = "",
-                                String comentario = "", String estatus = "Activa", String check = "false", String grupoEntidad = "1")
+                                String comentario = "", String estatus = "Activa", String check = "false", String grupoEntidad = "-1")
         {
             this.descripcion = descripcion;
             this.comentario = comentario;
@@ -32,12 +32,14 @@ namespace CapaPresentacion.Pantallas_Secundarias.TiposEntidades
             this.btn = btn;
             this.estatus = estatus;
             this.check = Convert.ToBoolean(check.ToLower());
+            MessageBox.Show(grupoEntidad);
             this.grupoEntidad = Convert.ToInt32(grupoEntidad);
             InitializeComponent();
         }
 
         private void PSTiposEntidades_Load(object sender, EventArgs e)
         {
+            NetFramework.Layers.CapaDatos.CNGruposEntidades cbGrupoEntidad = new NetFramework.Layers.CapaDatos.CNGruposEntidades();
             if (estatus == "Activa")
             {
                 cBEstatus.SelectedIndex = 0;
@@ -48,12 +50,14 @@ namespace CapaPresentacion.Pantallas_Secundarias.TiposEntidades
             {
                 cBEliminable.Checked = true;
             }
-            cBGrupoEntidad.SelectedIndex = grupoEntidad-1;
             tBComentario.Text = comentario;
             tbDescripcion.Text = descripcion;
             lbPrincipal.Text = accion;
             btnAceptar.Text = btn;
-            //cBEliminable.
+            cBGrupoEntidad.DataSource = cbGrupoEntidad.MostrarEntidades();
+            cBGrupoEntidad.ValueMember = "IdGrupoEntidad";
+            cBGrupoEntidad.DisplayMember = "Descripcion";
+            cBGrupoEntidad.SelectedIndex = grupoEntidad;
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -68,7 +72,7 @@ namespace CapaPresentacion.Pantallas_Secundarias.TiposEntidades
 
             if (lbPrincipal.Text == "Crear tipo entidades")
             {
-                if (objTipoEntidad.AddTipos(tbDescripcion.Text,cBGrupoEntidad.Text,tBComentario.Text, cBEstatus.Text, eliminable))
+                if (objTipoEntidad.AddTipos(tbDescripcion.Text,cBGrupoEntidad.SelectedValue.ToString(), tBComentario.Text, cBEstatus.Text, eliminable))
                 {
                     MessageBox.Show("Se ha creado con exito");
                 }
@@ -76,7 +80,7 @@ namespace CapaPresentacion.Pantallas_Secundarias.TiposEntidades
             }
             else
             {
-                if (objTipoEntidad.EditTipos(id, tbDescripcion.Text, cBGrupoEntidad.Text, tBComentario.Text, cBEstatus.Text, eliminable))
+                if (objTipoEntidad.EditTipos(id, tbDescripcion.Text,cBGrupoEntidad.SelectedValue.ToString(), tBComentario.Text, cBEstatus.Text, eliminable))
                 {
                     MessageBox.Show("Se ha editado con exito");
                 }

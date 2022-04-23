@@ -37,6 +37,9 @@
             // 
             // dGVTipoEntidad
             // 
+            this.dGVTipoEntidad.AllowUserToAddRows = false;
+            this.dGVTipoEntidad.AllowUserToDeleteRows = false;
+            this.dGVTipoEntidad.AllowUserToOrderColumns = true;
             this.dGVTipoEntidad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVTipoEntidad.Location = new System.Drawing.Point(12, 12);
             this.dGVTipoEntidad.Name = "dGVTipoEntidad";

@@ -7,9 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using NetFramework.Layers.ADO.Net;
 using CapaPresentacion.Pantallas_Secundarias;
-using NetFramework.Layers.ADO.Net.CapaNegocio;
+using NetFramework.Layers.CapaDatos;
 
 
 namespace CapaPresentacion.Pantalla_Principales

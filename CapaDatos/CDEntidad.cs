@@ -26,7 +26,7 @@ namespace CapaDatos
                 tabla.Load(leer);
                 conexion.CerrarConexion();
                 return tabla;
-            }catch(Exception e)
+            }catch(Exception)
             {
                 return null;
             }

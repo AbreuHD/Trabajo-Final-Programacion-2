@@ -9,6 +9,7 @@ using CapaDatos;
 
 namespace NetFramework.Layers.ADO.Net
 {
+    //static Exception a;
     public class CDTipoEntidad
     {
         public CDConnection conexion = new CDConnection();
@@ -64,8 +65,8 @@ namespace NetFramework.Layers.ADO.Net
                 comando.Parameters.Clear();
                 conexion.CerrarConexion();
                 return true;
-            }catch(Exception e) { return false; }
-
+            }catch(Exception ex) { throw ex; return false; }
+        
         }
 
         public bool EditDatos(int id, String descripcion, int idGrupoEntidad, String comentario, String sStatus, int noEliminable)

@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 using NetFramework.Layers.ADO.Net;
 using CapaDatos;
 
-namespace NetFramework.Layers.ADO.Net.CapaDatos
+namespace NetFramework.Layers.ADO.Net
 {
     public class CDGruposEntidades
     {
