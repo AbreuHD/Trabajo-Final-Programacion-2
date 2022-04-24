@@ -85,6 +85,30 @@ namespace CapaPresentacion.Pantallas_Secundarias
             tBComentario.Text = comentario;
         }
 
+        private void tBDescripcion_Validated(object sender, EventArgs e)
+        {
+            if (tBDescripcion.Text == string.Empty)
+            {
+                epError.SetError(tBDescripcion, "Escribe una descripcion.");
+                tBDescripcion.Focus();
+            }
+            else
+            {
+                epError.Clear();
+            }
+        }
 
+        private void tBComentario_Validated(object sender, EventArgs e)
+        {
+            if (tBComentario.Text == string.Empty)
+            {
+                epError.SetError(tBComentario, "Escribe un comentario.");
+                tBComentario.Focus();
+            }
+            else
+            {
+                epError.Clear();
+            }
+        }
     }
 }

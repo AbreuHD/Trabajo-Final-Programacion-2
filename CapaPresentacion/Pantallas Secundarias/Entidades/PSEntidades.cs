@@ -135,8 +135,158 @@ namespace CapaPresentacion.Pantallas_Secundarias
                     MessageBox.Show("Creacion Exitosa.");
                 }
                 else { MessageBox.Show("Ha ocurrido un error, no se a podido crear."); }
+
             }
+
             
+        }
+
+        private void tBUsuario_Validated(object sender, EventArgs e)
+        {
+            if (tBUsuario.Text == string.Empty)
+            {
+                epError.SetError(tBUsuario, "Escribe un nombre de usuario.");
+                tBUsuario.Focus();
+            }
+            else
+            {
+                epError.Clear();
+            }
+        }
+
+        private void tBPassword_Validated(object sender, EventArgs e)
+        {
+            if (tBPassword.Text == string.Empty)
+            {
+                epError.SetError(tBPassword, "Escribe una contraseña.");
+                tBPassword.Focus();
+            }
+            else
+            {
+                epError.Clear();
+            }
+
+        }
+
+        private void tbDireccion_Validated(object sender, EventArgs e)
+        {
+            if (tbDireccion.Text == string.Empty)
+            {
+                epError.SetError(tbDireccion, "Escribe una direccion.");
+                tbDireccion.Focus();
+            }
+            else
+            {
+                epError.Clear();
+            }
+
+        }
+
+        private void tBLocalidad_Validated(object sender, EventArgs e)
+        {
+            if (tBLocalidad.Text == string.Empty)
+            {
+                epError.SetError(tBLocalidad, "Escribe una localidad.");
+                tBLocalidad.Focus();
+            }
+            else
+            {
+                epError.Clear();
+            }
+
+        }
+
+        private void tBNumeroDocumento_Validated(object sender, EventArgs e)
+        {
+            if (tBNumeroDocumento.Text == string.Empty)
+            {
+                epError.SetError(tBNumeroDocumento, "Debes ingresar tu numero de documento.");
+                tBNumeroDocumento.Focus();
+            }
+            else
+            {
+                epError.Clear();
+            }
+        }
+
+        private void tBTelefono_Validated(object sender, EventArgs e)
+        {
+            if (tBTelefono.Text == string.Empty)
+            {
+                epError.SetError(tBTelefono, "Debes ingresar tu numero de telefono.");
+                tBTelefono.Focus();
+            }
+            else
+            {
+                epError.Clear();
+            }
+
+        }
+
+        private void tBPaginaWeb_Validated(object sender, EventArgs e)
+        {
+            if (tBPaginaWeb.Text == string.Empty)
+            {
+                epError.SetError(tBPaginaWeb, "Debes ingresar una pagina web.");
+                tBPaginaWeb.Focus();
+            }
+            else
+            {
+                epError.Clear();
+            }
+        }
+
+        private void tBFacebook_Validated(object sender, EventArgs e)
+        {
+            if (tBFacebook.Text == string.Empty)
+            {
+                epError.SetError(tBFacebook, "Debes ingresar una url de FaceBook.");
+                tBFacebook.Focus();
+            }
+            else
+            {
+                epError.Clear();
+            }
+
+        }
+
+        private void tBInstagram_Validated(object sender, EventArgs e)
+        {
+            if (tBInstagram.Text == string.Empty)
+            {
+                epError.SetError(tBInstagram, "Debes ingresar una url de Instagram.");
+                tBInstagram.Focus();
+            }
+            else
+            {
+                epError.Clear();
+            }
+        }
+
+        private void tBTwitter_Validated(object sender, EventArgs e)
+        {
+            if (tBTwitter.Text == string.Empty)
+            {
+                epError.SetError(tBTwitter, "Debes ingresar una url de Twitter.");
+                tBTwitter.Focus();
+            }
+            else
+            {
+                epError.Clear();
+            }
+        }
+
+        private void tBTikTok_Validated(object sender, EventArgs e)
+        {
+            if (tBTikTok.Text == string.Empty)
+            {
+                epError.SetError(tBTikTok, "Debes ingresar una url de TikTok.");
+                tBTikTok.Focus();
+            }
+            else
+            {
+                epError.Clear();
+            }
         }
     }
 }

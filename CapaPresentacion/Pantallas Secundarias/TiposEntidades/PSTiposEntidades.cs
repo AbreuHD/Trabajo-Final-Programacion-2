@@ -87,5 +87,31 @@ namespace CapaPresentacion.Pantallas_Secundarias.TiposEntidades
                 else { MessageBox.Show("Ha ocurrido un error, no se a podido editar."); }
             }
         }
+
+        private void tbDescripcion_Validated(object sender, EventArgs e)
+        {
+            if (tbDescripcion.Text == string.Empty)
+            {
+                epError.SetError(tbDescripcion, "Escribe una descripcion.");
+                tbDescripcion.Focus();
+            }
+            else
+            {
+                epError.Clear();
+            }
+        }
+
+        private void tBComentario_Validated(object sender, EventArgs e)
+        {
+            if (tBComentario.Text == string.Empty)
+            {
+                epError.SetError(tBComentario, "Escribe una comentario.");
+                tBComentario.Focus();
+            }
+            else
+            {
+                epError.Clear();
+            }
+        }
     }
 }
