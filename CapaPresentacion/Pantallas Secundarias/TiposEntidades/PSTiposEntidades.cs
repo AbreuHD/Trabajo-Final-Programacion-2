@@ -23,7 +23,7 @@ namespace CapaPresentacion.Pantallas_Secundarias.TiposEntidades
         int grupoEntidad;
         CNTipoEntidad objTipoEntidad = new CNTipoEntidad(); 
         public PSTiposEntidades(String accion, String btn, String id = "0", String descripcion = "",
-                                String comentario = "", String estatus = "Activa", String check = "false", String grupoEntidad = "-1")
+                                String comentario = "", String estatus = "Activa", String check = "false", String grupoEntidad = "1")
         {
             this.descripcion = descripcion;
             this.comentario = comentario;
@@ -57,7 +57,8 @@ namespace CapaPresentacion.Pantallas_Secundarias.TiposEntidades
             cBGrupoEntidad.DataSource = cbGrupoEntidad.MostrarEntidades();
             cBGrupoEntidad.ValueMember = "IdGrupoEntidad";
             cBGrupoEntidad.DisplayMember = "Descripcion";
-            cBGrupoEntidad.SelectedIndex = grupoEntidad;
+            cBGrupoEntidad.SelectedIndex = grupoEntidad-1;
+            
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)

@@ -37,6 +37,8 @@
             // 
             // dGEntidades
             // 
+            this.dGEntidades.AllowUserToAddRows = false;
+            this.dGEntidades.AllowUserToDeleteRows = false;
             this.dGEntidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGEntidades.Location = new System.Drawing.Point(12, 12);
             this.dGEntidades.Name = "dGEntidades";

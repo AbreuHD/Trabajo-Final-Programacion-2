@@ -29,7 +29,7 @@ namespace NetFramework.Layers.ADO.Net
                 tabla.Load(leer);
                 conexion.CerrarConexion();
                 return tabla;
-            }catch(Exception e) { return null; }
+            }catch(Exception e) { throw e; }
         }
 
         public bool AddDatos(String descripcion, String comentario, String sStatus, int noEliminable)
@@ -50,7 +50,8 @@ namespace NetFramework.Layers.ADO.Net
                 conexion.CerrarConexion();
                 return true;
             }catch(Exception e) {
-                return false; }
+                throw e;
+            }
         }
            
 
@@ -70,7 +71,7 @@ namespace NetFramework.Layers.ADO.Net
                 comando.Parameters.Clear();
                 conexion.CerrarConexion();
                 return true;
-            }catch(Exception e) { return false; }
+            }catch(Exception e) { throw e; }
             
         }
 
@@ -86,7 +87,7 @@ namespace NetFramework.Layers.ADO.Net
                 comando.Parameters.Clear();
                 conexion.CerrarConexion();
                 return true;
-            }catch(Exception e) { return false; }
+            }catch(Exception e) { throw e; }
 
         }
     }

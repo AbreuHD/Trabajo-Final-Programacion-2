@@ -9,14 +9,22 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaPresentacion.Pantallas_Secundarias;
 using NetFramework.Layers.ADO.Net.CapaNegocio;
+using NetFramework.Layers.CapaDatos;
 
 namespace CapaPresentacion.Pantallas_Secundarias
 {
     public partial class PSEntidades : Form
     {
         CNEntidad objEntidad = new CNEntidad();
+        CNGruposEntidades objGrupoEntidad = new CNGruposEntidades();
+        CNTipoEntidad objTipoEntidad = new CNTipoEntidad();
 
         int id;
+        int idGrupoEntidad;
+        int idTipoEntidad;
+        int limiteCredito;
+        int numeroDocumento;
+        bool eliminable;
         String accion;
         String botonInfo;
         String userNameEntidad; 
@@ -26,34 +34,25 @@ namespace CapaPresentacion.Pantallas_Secundarias
         String localidad; 
         String tipoEntidad; 
         String tipoDocumento;
-        int numeroDocumento; 
         String telefono; 
         String uRLPaginaWeb; 
         String uRLFacebook;
         String uRLInstagram; 
         String uRLTwitter; 
         String uRLTikTok; 
-        int idGrupoEntidad;
-        int idTipoEntidad; 
-        int limiteCredito; 
         String rolUserEntidad; 
         String comentario;
-        int sStatus;
-        //int noEliminable;
+        String sStatus;
 
         public PSEntidades( String accion = "", String botonInfo = "", String userNameEntidad = "", String passworEntidad = "", String descripcion = "",
-                            String direccion = "", String localidad = "", String tipoEntidad = "", String tipoDocumento = "",
+                            String direccion = "", String localidad = "", String tipoEntidad = "0", String tipoDocumento = "0",
                             String telefono = "", String uRLPaginaWeb = "", String uRLFacebook = "",
                             String numeroDocumento = "0", String uRLInstagram = "", String uRLTwitter = "", String uRLTikTok = "",
-                            String comentario = "", String id = "0")
-        /*int idTipoEntidad = 0, int limiteCredito = 0, int idGrupoEntidad = 0, int sStatus = 0,  String rolUserEntidad = "", String noEliminable = "0"*/
+                            String comentario = "", String id = "0", String sstatus = "0", String rolUserEntidad = "User", String limiteCredito = "1",
+                            String idTipoEntidad = "1", String idGrupoEntidad = "1", String eliminable = "False")
 
         {
             DataTable dt = new DataTable();
-
-     
-            //cBIDTipoEntidad.DataSource = objEntidad.BuscarIDTiposEntidades();
-
 
             this.id = int.Parse(id);
             this.accion = accion;
@@ -63,8 +62,8 @@ namespace CapaPresentacion.Pantallas_Secundarias
             this.descripcion = descripcion;
             this.direccion = direccion;
             this.localidad = localidad;
-            //this.tipoEntidad = tipoEntidad;
-            //this.tipoDocumento = tipoDocumento;
+            this.tipoEntidad = tipoEntidad;
+            this.tipoDocumento = tipoDocumento;
             this.numeroDocumento = (int)Convert.ToInt64(numeroDocumento);
             this.telefono = telefono;
             this.uRLPaginaWeb = uRLPaginaWeb;
@@ -72,19 +71,32 @@ namespace CapaPresentacion.Pantallas_Secundarias
             this.uRLInstagram = uRLInstagram;
             this.uRLTwitter = uRLTwitter;
             this.uRLTikTok = uRLTikTok;
-            //this.idGrupoEntidad = idGrupoEntidad;
-            //this.idTipoEntidad = idTipoEntidad;
-            //this.limiteCredito = limiteCredito;
-            //this.rolUserEntidad = rolUserEntidad;
+            this.idGrupoEntidad = Convert.ToInt32(idGrupoEntidad);
+            this.idTipoEntidad = Convert.ToInt32(idTipoEntidad);
+            this.limiteCredito = Convert.ToInt32(limiteCredito);
+            this.rolUserEntidad = rolUserEntidad;
             this.comentario = comentario;
-            //this.sStatus = sStatus;
-            //this.noEliminable = 1*Convert.ToInt16(noEliminable);
-
+            this.sStatus = sstatus;
+            this.eliminable = Convert.ToBoolean(eliminable.ToLower());
             InitializeComponent();
         }
 
         private void PSEntidades_Load(object sender, EventArgs e)
         {
+            if(tipoEntidad == "Fisico"){cBTipoEntidad.SelectedIndex = 0;}
+            else { cBTipoEntidad.SelectedIndex = 1; }
+
+            if (tipoDocumento == "Cédula") { cBTipoDeDocumento.SelectedIndex = 1; }
+            else if (tipoDocumento == "Pasaporte") { cBTipoDeDocumento.SelectedIndex = 2; }
+            else { cBTipoDeDocumento.SelectedIndex = 0; }
+
+            if (sStatus == "Inactiva") { cBStatus.SelectedIndex = 1; }
+            else { cBStatus.SelectedIndex = 0; }
+
+            if (rolUserEntidad == "Admin") { cBRolUserEntidad.SelectedIndex = 0; }
+            else if (rolUserEntidad == "Supervisor") { cBRolUserEntidad.SelectedIndex = 1; }
+            else { cBRolUserEntidad.SelectedIndex = 2; }
+
             labelEntidades.Text = accion;
             btnAceptar.Text = botonInfo;
             tBUsuario.Text = userNameEntidad;
@@ -100,6 +112,19 @@ namespace CapaPresentacion.Pantallas_Secundarias
             tBTwitter.Text = uRLTwitter;
             tBTikTok.Text = uRLTikTok;
             tBComentario.Text = comentario;
+            nUDLimiteCredito.Value = limiteCredito;
+            rBEliminable.Checked = eliminable;
+
+            MessageBox.Show(Convert.ToString(idGrupoEntidad));
+            cBGrupoEntidad.DataSource = objGrupoEntidad.MostrarEntidades();
+            cBGrupoEntidad.ValueMember = "IdGrupoEntidad";
+            cBGrupoEntidad.DisplayMember = "Descripcion";
+            cBGrupoEntidad.SelectedIndex = idGrupoEntidad-1;
+
+            cBIDTipoEntidad.DataSource = objTipoEntidad.MostrarTipoEntidades();
+            cBIDTipoEntidad.ValueMember = "IdTipoEntidad";
+            cBIDTipoEntidad.DisplayMember = "Descripcion";
+            cBIDTipoEntidad.SelectedIndex = idTipoEntidad-1;
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -118,8 +143,8 @@ namespace CapaPresentacion.Pantallas_Secundarias
             {
                if(objEntidad.Editar(id, tBUsuario.Text, tBPassword.Text, tBDescripcion.Text, tbDireccion.Text, tBLocalidad.Text, cBTipoEntidad.Text,
                                   cBTipoDeDocumento.Text, tBTelefono.Text, tBPaginaWeb.Text, tBFacebook.Text, tBNumeroDocumento.Text,
-                                  tBInstagram.Text, tBTwitter.Text, tBTikTok.Text, tBComentario.Text, cBIDTipoEntidad.Text, nUDLimiteCredito.Value.ToString(),
-                                  cBGrupoEntidad.Text, cBStatus.Text, cBRolUserEntidad.Text, eliminable))
+                                  tBInstagram.Text, tBTwitter.Text, tBTikTok.Text, tBComentario.Text, cBIDTipoEntidad.SelectedValue.ToString(), nUDLimiteCredito.Value.ToString(),
+                                  cBGrupoEntidad.SelectedValue.ToString(), cBStatus.Text, cBRolUserEntidad.Text, eliminable))
                 {
                     MessageBox.Show("Editado con exito");
                 }
@@ -129,8 +154,8 @@ namespace CapaPresentacion.Pantallas_Secundarias
             {
                 if (objEntidad.Crear(tBUsuario.Text, tBPassword.Text, tBDescripcion.Text, tbDireccion.Text, tBLocalidad.Text, cBTipoEntidad.Text,
                                   cBTipoDeDocumento.Text, tBTelefono.Text, tBPaginaWeb.Text, tBFacebook.Text, tBNumeroDocumento.Text,
-                                  tBInstagram.Text, tBTwitter.Text, tBTikTok.Text, tBComentario.Text, cBIDTipoEntidad.Text, "1",
-                                  cBGrupoEntidad.Text, cBStatus.Text, cBRolUserEntidad.Text, eliminable))
+                                  tBInstagram.Text, tBTwitter.Text, tBTikTok.Text, tBComentario.Text, cBIDTipoEntidad.SelectedValue.ToString(), nUDLimiteCredito.Value.ToString(),
+                                  cBGrupoEntidad.SelectedValue.ToString(), cBStatus.Text, cBRolUserEntidad.Text, eliminable))
                 {
                     MessageBox.Show("Creacion Exitosa.");
                 }
