@@ -41,7 +41,7 @@ namespace CapaPresentacion.Pantallas_Secundarias
             
             int eliminable = 0;
 
-            if (cBEstatus.Enabled)
+            if (cBEliminable.Checked)
             {
                 eliminable = 1;
 

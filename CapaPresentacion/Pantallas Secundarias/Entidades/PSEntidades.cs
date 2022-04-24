@@ -119,12 +119,21 @@ namespace CapaPresentacion.Pantallas_Secundarias
             cBGrupoEntidad.DataSource = objGrupoEntidad.MostrarEntidades();
             cBGrupoEntidad.ValueMember = "IdGrupoEntidad";
             cBGrupoEntidad.DisplayMember = "Descripcion";
-            cBGrupoEntidad.SelectedIndex = idGrupoEntidad-1;
+            try
+            {
+                cBGrupoEntidad.SelectedIndex = idGrupoEntidad - 1; ;
+            }
+            catch (Exception ex) { }
+            
 
             cBIDTipoEntidad.DataSource = objTipoEntidad.MostrarTipoEntidades();
             cBIDTipoEntidad.ValueMember = "IdTipoEntidad";
             cBIDTipoEntidad.DisplayMember = "Descripcion";
-            cBIDTipoEntidad.SelectedIndex = idTipoEntidad-1;
+            try
+            {
+                cBIDTipoEntidad.SelectedIndex = idTipoEntidad-1;
+            }
+            catch (Exception ex) {  }
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
