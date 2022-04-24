@@ -123,7 +123,7 @@ namespace CapaPresentacion.Pantallas_Secundarias
             {
                 cBGrupoEntidad.SelectedIndex = idGrupoEntidad - 1; ;
             }
-            catch (Exception ex) { }
+            catch (Exception ex) { throw ex; }
             
 
             cBIDTipoEntidad.DataSource = objTipoEntidad.MostrarTipoEntidades();
@@ -133,7 +133,7 @@ namespace CapaPresentacion.Pantallas_Secundarias
             {
                 cBIDTipoEntidad.SelectedIndex = idTipoEntidad-1;
             }
-            catch (Exception ex) {  }
+            catch (Exception ex) { throw ex; }
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -157,7 +157,7 @@ namespace CapaPresentacion.Pantallas_Secundarias
                 {
                     MessageBox.Show("Editado con exito");
                 }
-                else { MessageBox.Show("Ha ocurrido un error y no se a podido editar."); }
+                else { MessageBox.Show("Debes llenar todos los campos."); }
             }
             else
             {

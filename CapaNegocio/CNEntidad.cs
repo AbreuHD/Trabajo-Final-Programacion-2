@@ -26,6 +26,8 @@ namespace NetFramework.Layers.ADO.Net.CapaNegocio
                             String rolUserEntidad, int noEliminable)
 
         {
+
+
             return objEntidad.Editar(id, userNameEntidad, passworEntidad, descripcion,
                               direccion, localidad, tipoEntidad, tipoDocumento,
                               telefono, uRLPaginaWeb, uRLFacebook,
