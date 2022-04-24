@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using NetFramework.Layers.WinApp;
 
-namespace CapaPresentacion
+namespace NetFramework.Layers.SplashScreen
 {
-    internal static class Program
+    public class Class1
     {
         /// <summary>
-        /// The main entry point for the application.
+        /// Punto de entrada principal para la aplicación.
         /// </summary>
         [STAThread]
         static void Main()
@@ -20,9 +19,8 @@ namespace CapaPresentacion
             SplashScreen sp = new SplashScreen();
             if (sp.ShowDialog() == DialogResult.OK)
             {
-                Login login = new Login();
-                login.Show();
+               
             }
         }
     }
-}
+} 

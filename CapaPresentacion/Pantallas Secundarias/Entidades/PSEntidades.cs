@@ -19,29 +19,29 @@ namespace CapaPresentacion.Pantallas_Secundarias
         int id;
         String accion;
         String botonInfo;
-        String userNameEntidad; 
-        String passworEntidad; 
+        String userNameEntidad;
+        String passworEntidad;
         String descripcion;
-        String direccion; 
-        String localidad; 
-        String tipoEntidad; 
+        String direccion;
+        String localidad;
+        String tipoEntidad;
         String tipoDocumento;
-        int numeroDocumento; 
-        String telefono; 
-        String uRLPaginaWeb; 
+        int numeroDocumento;
+        String telefono;
+        String uRLPaginaWeb;
         String uRLFacebook;
-        String uRLInstagram; 
-        String uRLTwitter; 
-        String uRLTikTok; 
+        String uRLInstagram;
+        String uRLTwitter;
+        String uRLTikTok;
         int idGrupoEntidad;
-        int idTipoEntidad; 
-        int limiteCredito; 
-        String rolUserEntidad; 
+        int idTipoEntidad;
+        int limiteCredito;
+        String rolUserEntidad;
         String comentario;
         int sStatus;
         //int noEliminable;
 
-        public PSEntidades( String accion = "", String botonInfo = "", String userNameEntidad = "", String passworEntidad = "", String descripcion = "",
+        public PSEntidades(String accion = "", String botonInfo = "", String userNameEntidad = "", String passworEntidad = "", String descripcion = "",
                             String direccion = "", String localidad = "", String tipoEntidad = "", String tipoDocumento = "",
                             String telefono = "", String uRLPaginaWeb = "", String uRLFacebook = "",
                             String numeroDocumento = "0", String uRLInstagram = "", String uRLTwitter = "", String uRLTikTok = "",
@@ -51,7 +51,7 @@ namespace CapaPresentacion.Pantallas_Secundarias
         {
             DataTable dt = new DataTable();
 
-     
+
             //cBIDTipoEntidad.DataSource = objEntidad.BuscarIDTiposEntidades();
 
 
@@ -116,10 +116,10 @@ namespace CapaPresentacion.Pantallas_Secundarias
 
             if (accion == "Editar Entidades")
             {
-               if(objEntidad.Editar(id, tBUsuario.Text, tBPassword.Text, tBDescripcion.Text, tbDireccion.Text, tBLocalidad.Text, cBTipoEntidad.Text,
-                                  cBTipoDeDocumento.Text, tBTelefono.Text, tBPaginaWeb.Text, tBFacebook.Text, tBNumeroDocumento.Text,
-                                  tBInstagram.Text, tBTwitter.Text, tBTikTok.Text, tBComentario.Text, cBIDTipoEntidad.Text, nUDLimiteCredito.Value.ToString(),
-                                  cBGrupoEntidad.Text, cBStatus.Text, cBRolUserEntidad.Text, eliminable))
+                if (objEntidad.Editar(id, tBUsuario.Text, tBPassword.Text, tBDescripcion.Text, tbDireccion.Text, tBLocalidad.Text, cBTipoEntidad.Text,
+                                   cBTipoDeDocumento.Text, tBTelefono.Text, tBPaginaWeb.Text, tBFacebook.Text, tBNumeroDocumento.Text,
+                                   tBInstagram.Text, tBTwitter.Text, tBTikTok.Text, tBComentario.Text, cBIDTipoEntidad.Text, nUDLimiteCredito.Value.ToString(),
+                                   cBGrupoEntidad.Text, cBStatus.Text, cBRolUserEntidad.Text, eliminable))
                 {
                     MessageBox.Show("Editado con exito");
                 }
@@ -138,12 +138,12 @@ namespace CapaPresentacion.Pantallas_Secundarias
 
             }
 
-            
+
         }
 
         private void tBUsuario_Validated(object sender, EventArgs e)
         {
-            if (tBUsuario.Text == string.Empty)
+            if (tBUsuario.Text.Length == 0 || tBUsuario.Text == string.Empty || tBUsuario.Text == null)
             {
                 epError.SetError(tBUsuario, "Escribe un nombre de usuario.");
                 tBUsuario.Focus();
@@ -156,14 +156,13 @@ namespace CapaPresentacion.Pantallas_Secundarias
 
         private void tBPassword_Validated(object sender, EventArgs e)
         {
-            if (tBPassword.Text == string.Empty)
-            {
-                epError.SetError(tBPassword, "Escribe una contraseña.");
-                tBPassword.Focus();
+            if (tBPassword.Text != string.Empty && tBPassword.Text != null)            {
+                epError.Clear();
             }
             else
             {
-                epError.Clear();
+                epError.SetError(tBPassword, "Escribe una contraseña.");
+                tBPassword.Focus();
             }
 
         }
