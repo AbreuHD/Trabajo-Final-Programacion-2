@@ -23,6 +23,8 @@ namespace CapaPresentacion
                 Login login = new Login();
                 login.Show();
             }
+            Application.Run();
+
         }
     }
 }

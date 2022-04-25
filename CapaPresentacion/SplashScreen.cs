@@ -23,7 +23,7 @@ namespace NetFramework.Layers.WinApp
         {
             Tiempo.Stop();
             this.DialogResult = DialogResult.OK;
-            this.Close();
+
         }
     }
 }
