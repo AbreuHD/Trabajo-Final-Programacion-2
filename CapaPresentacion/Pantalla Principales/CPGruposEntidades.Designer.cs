@@ -37,6 +37,8 @@
             // 
             // dGVGruposEntidades
             // 
+            this.dGVGruposEntidades.AllowUserToAddRows = false;
+            this.dGVGruposEntidades.AllowUserToDeleteRows = false;
             this.dGVGruposEntidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVGruposEntidades.Location = new System.Drawing.Point(12, 12);
             this.dGVGruposEntidades.Name = "dGVGruposEntidades";

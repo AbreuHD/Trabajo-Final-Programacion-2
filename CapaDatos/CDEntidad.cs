@@ -26,7 +26,7 @@ namespace CapaDatos
                 tabla.Load(leer);
                 conexion.CerrarConexion();
                 return tabla;
-            }catch(Exception e)
+            }catch(Exception)
             {
                 return null;
             }
@@ -71,7 +71,7 @@ namespace CapaDatos
                 conexion.CerrarConexion();
                 return true;
 
-            }catch(Exception e) {return false;}
+            }catch(Exception e) { throw e; }
         }
 
         public bool Insertar(String userNameEntidad, String passworEntidad, String descripcion,
@@ -113,7 +113,7 @@ namespace CapaDatos
                 comando.Parameters.Clear();
                 conexion.CerrarConexion();
                 return true;
-            }catch(Exception e) { return false; } 
+            }catch(Exception e) { throw e; } 
         }
         
         public bool Eliminar(int id)
@@ -128,7 +128,7 @@ namespace CapaDatos
                 comando.Parameters.Clear();
                 conexion.CerrarConexion();
                 return true;
-            }catch(Exception e) { return false; }
+            }catch(Exception e) { throw e; }
             
         }
     }

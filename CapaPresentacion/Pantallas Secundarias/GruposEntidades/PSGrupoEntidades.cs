@@ -7,13 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CapaPresentacion;
+using NetFramework.Layers.CapaDatos;
 
 namespace CapaPresentacion.Pantallas_Secundarias
 {
     public partial class PSGrupoEntidades : Form
     {
-        NetFramework.Layers.ADO.Net.CapaNegocio.CNGruposEntidades objeGrupoEntidades = new NetFramework.Layers.ADO.Net.CapaNegocio.CNGruposEntidades();
+        CNGruposEntidades objeGrupoEntidades = new CNGruposEntidades();
         String accion;
         String btn;
         String id;
@@ -41,7 +41,7 @@ namespace CapaPresentacion.Pantallas_Secundarias
             
             int eliminable = 0;
 
-            if (cBEstatus.Enabled)
+            if (cBEliminable.Checked)
             {
                 eliminable = 1;
 

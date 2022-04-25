@@ -31,7 +31,7 @@ namespace NetFramework.Layers.ADO.Net
                 conexion.CerrarConexion();
                 return tabla;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return null;
             }

@@ -9,6 +9,7 @@ using CapaDatos;
 
 namespace NetFramework.Layers.ADO.Net
 {
+    //static Exception a;
     public class CDTipoEntidad
     {
         public CDConnection conexion = new CDConnection();
@@ -28,7 +29,7 @@ namespace NetFramework.Layers.ADO.Net
                 tabla.Load(leer);
                 conexion.CerrarConexion();
                 return tabla;
-            }catch (Exception e) { return null; }
+            }catch (Exception e) { throw e; }
         }
 
         public bool Eliminar(int id)
@@ -43,7 +44,7 @@ namespace NetFramework.Layers.ADO.Net
                 comando.Parameters.Clear();
                 conexion.CerrarConexion();
                 return true;
-            }catch(Exception e) { return false; }
+            }catch(Exception e) { throw e; }
         }
 
         public bool AddDatos(String descripcion, int idGrupoEntidad, String comentario, String sStatus, int noEliminable)
@@ -64,8 +65,8 @@ namespace NetFramework.Layers.ADO.Net
                 comando.Parameters.Clear();
                 conexion.CerrarConexion();
                 return true;
-            }catch(Exception e) { return false; }
-
+            }catch(Exception ex) { throw ex;  }
+        
         }
 
         public bool EditDatos(int id, String descripcion, int idGrupoEntidad, String comentario, String sStatus, int noEliminable)
@@ -86,7 +87,7 @@ namespace NetFramework.Layers.ADO.Net
                 comando.Parameters.Clear();
                 conexion.CerrarConexion();
                 return true;
-            } catch(Exception e) { return false; }
+            } catch(Exception e) { throw e; }
 
         }
     }

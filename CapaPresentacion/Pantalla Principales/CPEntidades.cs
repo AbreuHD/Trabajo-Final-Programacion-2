@@ -58,8 +58,10 @@ namespace CapaPresentacion
                 dGEntidades.CurrentRow.Cells["URLFacebook"].Value.ToString(), dGEntidades.CurrentRow.Cells["NumeroDocumento"].Value.ToString(),
                 dGEntidades.CurrentRow.Cells["URLInstagram"].Value.ToString(), dGEntidades.CurrentRow.Cells["URLTwitter"].Value.ToString(),
                 dGEntidades.CurrentRow.Cells["URLTikTok"].Value.ToString(), dGEntidades.CurrentRow.Cells["Comentario"].Value.ToString(),
-                dGEntidades.CurrentRow.Cells["IdEntidad"].Value.ToString()
-                //dGEntidades.CurrentRow.Cells["NoEliminable"].Value.ToString()
+                dGEntidades.CurrentRow.Cells["IdEntidad"].Value.ToString(), dGEntidades.CurrentRow.Cells["SStatus"].Value.ToString(),
+                dGEntidades.CurrentRow.Cells["RolUserEntidad"].Value.ToString(), dGEntidades.CurrentRow.Cells["LimiteCredito"].Value.ToString(),
+                dGEntidades.CurrentRow.Cells["IdTipoEntidad"].Value.ToString(), dGEntidades.CurrentRow.Cells["IdGrupoEntidad"].Value.ToString(),
+                dGEntidades.CurrentRow.Cells["NoEliminable"].Value.ToString()
                 );
                 DialogResult dialogResult = editar.ShowDialog();
                 if (dialogResult == DialogResult.OK)
