@@ -27,12 +27,12 @@ namespace CapaPresentacion.Pantallas_Secundarias
         bool eliminable;
         String accion;
         String botonInfo;
-        String userNameEntidad; 
-        String passworEntidad; 
+        String userNameEntidad;
+        String passworEntidad;
         String descripcion;
-        String direccion; 
-        String localidad; 
-        String tipoEntidad; 
+        String direccion;
+        String localidad;
+        String tipoEntidad;
         String tipoDocumento;
         String telefono; 
         String uRLPaginaWeb; 
@@ -43,6 +43,7 @@ namespace CapaPresentacion.Pantallas_Secundarias
         String rolUserEntidad; 
         String comentario;
         String sStatus;
+
 
         public PSEntidades( String accion = "", String botonInfo = "", String userNameEntidad = "", String passworEntidad = "", String descripcion = "",
                             String direccion = "", String localidad = "", String tipoEntidad = "0", String tipoDocumento = "0",
@@ -172,12 +173,12 @@ namespace CapaPresentacion.Pantallas_Secundarias
 
             }
 
-            
+
         }
 
         private void tBUsuario_Validated(object sender, EventArgs e)
         {
-            if (tBUsuario.Text == string.Empty)
+            if (tBUsuario.Text.Length == 0 || tBUsuario.Text == string.Empty || tBUsuario.Text == null)
             {
                 epError.SetError(tBUsuario, "Escribe un nombre de usuario.");
                 tBUsuario.Focus();
@@ -190,14 +191,13 @@ namespace CapaPresentacion.Pantallas_Secundarias
 
         private void tBPassword_Validated(object sender, EventArgs e)
         {
-            if (tBPassword.Text == string.Empty)
-            {
-                epError.SetError(tBPassword, "Escribe una contraseña.");
-                tBPassword.Focus();
+            if (tBPassword.Text != string.Empty && tBPassword.Text != null)            {
+                epError.Clear();
             }
             else
             {
-                epError.Clear();
+                epError.SetError(tBPassword, "Escribe una contraseña.");
+                tBPassword.Focus();
             }
 
         }
