@@ -32,7 +32,7 @@ namespace CapaPresentacion.Pantallas_Secundarias.TiposEntidades
             this.btn = btn;
             this.estatus = estatus;
             this.check = Convert.ToBoolean(check.ToLower());
-            MessageBox.Show(grupoEntidad);
+            //MessageBox.Show(grupoEntidad);
             this.grupoEntidad = Convert.ToInt32(grupoEntidad);
             InitializeComponent();
         }

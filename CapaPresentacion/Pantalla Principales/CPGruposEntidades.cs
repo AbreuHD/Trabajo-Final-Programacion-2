@@ -69,12 +69,20 @@ namespace CapaPresentacion.Pantalla_Principales
             if(dGVGruposEntidades.SelectedRows.Count > 0)
             {
                 CNGruposEntidades objGruposEntidades = new CNGruposEntidades();
-                if (objGruposEntidades.EliminarDatos(dGVGruposEntidades.CurrentRow.Cells["IdGrupoEntidad"].Value.ToString()))
+                if (Convert.ToBoolean(dGVGruposEntidades.CurrentRow.Cells["NoEliminable"].Value.ToString().ToLower()))
                 {
-                    MessageBox.Show("La eliminacion Fue Exitosa");
-                    obtenerTabla();
+                    MessageBox.Show("Este Grupo Entidad no se puede eliminar por que asi esta configurado");
                 }
-                else { MessageBox.Show("Ha ocurrido un error inesperado, no se a eliminado el dato.");  }
+                else
+                {
+                    if (objGruposEntidades.EliminarDatos(dGVGruposEntidades.CurrentRow.Cells["IdGrupoEntidad"].Value.ToString()))
+                    {
+                        MessageBox.Show("La eliminacion Fue Exitosa");
+                        obtenerTabla();
+                    }
+                    else { MessageBox.Show("Ha ocurrido un error inesperado, no se a eliminado el dato."); }
+                }
+                
             }
             else
             {

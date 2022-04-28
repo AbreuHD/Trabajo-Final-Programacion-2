@@ -87,6 +87,12 @@
     <Compile Include="Pantalla Principales\CPGruposEntidades.Designer.cs">
       <DependentUpon>CPGruposEntidades.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pantallas Secundarias\AboutUs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas Secundarias\AboutUs.Designer.cs">
+      <DependentUpon>AboutUs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pantallas Secundarias\Entidades\PSEntidades.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pantalla Principales\CPGruposEntidades.resx">
       <DependentUpon>CPGruposEntidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas Secundarias\AboutUs.resx">
+      <DependentUpon>AboutUs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pantallas Secundarias\Entidades\PSEntidades.resx">
       <DependentUpon>PSEntidades.cs</DependentUpon>

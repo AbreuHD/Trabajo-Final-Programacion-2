@@ -79,13 +79,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btEliminar);
             this.Controls.Add(this.btEditar);
             this.Controls.Add(this.btCrear);
             this.Controls.Add(this.dGEntidades);
             this.Name = "CPEntidades";
-            this.Text = "Form1";
+            this.Text = "Entidades";
             this.Load += new System.EventHandler(this.FEntidades_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dGEntidades)).EndInit();
             this.ResumeLayout(false);

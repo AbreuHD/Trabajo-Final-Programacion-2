@@ -116,7 +116,7 @@ namespace CapaPresentacion.Pantallas_Secundarias
             nUDLimiteCredito.Value = limiteCredito;
             rBEliminable.Checked = eliminable;
 
-            MessageBox.Show(Convert.ToString(idGrupoEntidad));
+            //MessageBox.Show(Convert.ToString(idGrupoEntidad))
             cBGrupoEntidad.DataSource = objGrupoEntidad.MostrarEntidades();
             cBGrupoEntidad.ValueMember = "IdGrupoEntidad";
             cBGrupoEntidad.DisplayMember = "Descripcion";

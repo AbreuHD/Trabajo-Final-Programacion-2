@@ -79,13 +79,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(802, 479);
             this.Controls.Add(this.btEliminar);
             this.Controls.Add(this.btEditar);
             this.Controls.Add(this.btCrear);
             this.Controls.Add(this.dGVGruposEntidades);
             this.Name = "CPGruposEntidades";
-            this.Text = "Form1";
+            this.Text = "Grupo Entidades";
             this.Load += new System.EventHandler(this.CPGruposEntidades_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dGVGruposEntidades)).EndInit();
             this.ResumeLayout(false);

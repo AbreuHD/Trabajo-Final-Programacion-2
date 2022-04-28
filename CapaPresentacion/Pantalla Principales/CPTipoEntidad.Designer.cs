@@ -86,7 +86,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dGVTipoEntidad);
             this.Name = "CPTipoEntidad";
-            this.Text = "CDTipoEntidad";
+            this.Text = "Tipo Entidades";
             this.Load += new System.EventHandler(this.CDTipoEntidad_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dGVTipoEntidad)).EndInit();
             this.ResumeLayout(false);

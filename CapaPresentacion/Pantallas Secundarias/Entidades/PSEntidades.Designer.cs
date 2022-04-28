@@ -525,7 +525,7 @@
             this.Controls.Add(this.tBUsuario);
             this.Controls.Add(this.labelEntidades);
             this.Name = "PSEntidades";
-            this.Text = "Form1";
+            this.Text = "Entidades";
             this.Load += new System.EventHandler(this.PSEntidades_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nUDLimiteCredito)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epError)).EndInit();

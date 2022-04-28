@@ -81,12 +81,19 @@ namespace CapaPresentacion
             if(dGEntidades.SelectedRows.Count > 0)
             {
                 CNEntidad objEntidadDelete = new CNEntidad();
-                if (objEntidadDelete.Eliminar(dGEntidades.CurrentRow.Cells["IdEntidad"].Value.ToString()))
+                if(Convert.ToBoolean(dGEntidades.CurrentRow.Cells["NoEliminable"].Value.ToString().ToLower()))
                 {
-                    MessageBox.Show("Se ha eliminado correctamente");
-                    MostrarEntidades();
+                    MessageBox.Show("Esta entidad no se puede eliminar por que asi esta guardada.");
                 }
-                else { MessageBox.Show("A ocurrido un error inesperado, no se a podido eliminar."); }
+                else
+                {
+                    if (objEntidadDelete.Eliminar(dGEntidades.CurrentRow.Cells["IdEntidad"].Value.ToString()))
+                    {
+                        MessageBox.Show("Se ha eliminado correctamente");
+                        MostrarEntidades();
+                    }
+                    else { MessageBox.Show("A ocurrido un error inesperado, no se a podido eliminar."); }
+                }
             }
             else
             {

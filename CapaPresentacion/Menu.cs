@@ -10,13 +10,16 @@ using System.Windows.Forms;
 using NetFramework.Layers.WinApp;
 using CapaPresentacion;
 using CapaPresentacion.Pantalla_Principales;
+using NetFramework.Layers.WinApp.Pantallas_Secundarias;
 
 namespace NetFramework.Layers.WinApp
 {
     public partial class Menu : Form
     {
-        public Menu()
+        String usuario;
+        public Menu(String usuario)
         {
+            this.usuario = usuario;
             InitializeComponent();
         }
 
@@ -61,7 +64,19 @@ namespace NetFramework.Layers.WinApp
 
         private void Menu_Load(object sender, EventArgs e)
         {
+            UserNameMenu.Text = "| Usuario : " + usuario ;
+        }
 
+        private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutUs acerca = new AboutUs();
+            acerca.MdiParent = this;
+            acerca.Show();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Hora.Text = "| Fecha y hora : " + DateTime.Now.ToString() + " |";
         }
     }
 }

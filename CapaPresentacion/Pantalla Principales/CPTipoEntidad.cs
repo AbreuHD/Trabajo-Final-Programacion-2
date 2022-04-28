@@ -68,11 +68,20 @@ namespace CapaPresentacion.Pantalla_Principales
         {
             if (dGVTipoEntidad.SelectedRows.Count > 0)
             {
-                if (objTipoEntidad.Eliminar(dGVTipoEntidad.CurrentRow.Cells["IdTipoEntidad"].Value.ToString())){
-                    MessageBox.Show("Eliminacion exitosa");
-                    MostrarTabla();
+                if (Convert.ToBoolean(dGVTipoEntidad.CurrentRow.Cells["NoEliminable"].Value.ToString().ToLower()))
+                {
+                    MessageBox.Show("No se puede eliminar el tipo entidad por que asi esta configurado");
                 }
-                else { MessageBox.Show("Ha ocurrido un error inesperado, no se a podido eliminar el dato."); }
+                else
+                {
+                    if (objTipoEntidad.Eliminar(dGVTipoEntidad.CurrentRow.Cells["IdTipoEntidad"].Value.ToString()))
+                    {
+                        MessageBox.Show("Eliminacion exitosa");
+                        MostrarTabla();
+                    }
+                    else { MessageBox.Show("Ha ocurrido un error inesperado, no se a podido eliminar el dato."); }
+
+                }
             }
             else
             {

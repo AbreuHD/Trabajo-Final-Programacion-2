@@ -31,7 +31,7 @@ namespace NetFramework.Layers.WinApp
             }
             else { 
                 //MessageBox.Show("Login Exitoso");
-                Menu menu = new Menu();
+                Menu menu = new Menu(tBUsuario.Text);
                 menu.Show();
                 Dispose();
             }
