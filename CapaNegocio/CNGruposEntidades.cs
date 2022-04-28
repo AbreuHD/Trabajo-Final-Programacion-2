@@ -18,12 +18,20 @@ namespace NetFramework.Layers.CapaDatos
         }
 
         public bool AddDatos(String descripcion, String comentario, String sStatus, int noEliminable) {
-            return objGrupoEntidades.AddDatos(descripcion, comentario, sStatus, noEliminable);
+            if(descripcion.Equals("") || comentario.Equals("") || sStatus.Equals("") || noEliminable.ToString().Equals(""))
+            {
+                return false;
+            }
+            else { return objGrupoEntidades.AddDatos(descripcion, comentario, sStatus, noEliminable); }
         }
 
         public bool EditDatos(String id, String descripcion, String comentario, String sStatus, int noEliminable)
         {
-            return objGrupoEntidades.EditDatos(int.Parse(id), descripcion, comentario, sStatus, noEliminable);
+            if (descripcion.Equals("") || comentario.Equals("") || sStatus.Equals("") || noEliminable.ToString().Equals(""))
+            {
+                return false;
+            }
+            else { return objGrupoEntidades.EditDatos(int.Parse(id), descripcion, comentario, sStatus, noEliminable); }
         }
 
         public bool EliminarDatos(String id)

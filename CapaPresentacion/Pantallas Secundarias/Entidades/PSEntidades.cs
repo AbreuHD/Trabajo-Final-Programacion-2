@@ -169,7 +169,7 @@ namespace CapaPresentacion.Pantallas_Secundarias
                 {
                     MessageBox.Show("Creacion Exitosa.");
                 }
-                else { MessageBox.Show("Ha ocurrido un error, no se a podido crear."); }
+                else { MessageBox.Show("Debes llenar todos los campos."); }
 
             }
 

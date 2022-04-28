@@ -23,12 +23,19 @@ namespace NetFramework.Layers.CapaDatos
 
         public bool AddTipos(String descripcion, String idGrupoEntidad, String comentario, String sStatus, int noEliminable)
         {
-            return objGrupoEntidad.AddDatos(descripcion, Convert.ToInt32(idGrupoEntidad), comentario, sStatus, noEliminable);
+            if (descripcion.Equals("") || idGrupoEntidad.Equals("") || comentario.Equals("") || sStatus.Equals("") || noEliminable.ToString().Equals(""))
+            {
+                return false;
+            }
+            else { return objGrupoEntidad.AddDatos(descripcion, Convert.ToInt32(idGrupoEntidad), comentario, sStatus, noEliminable); }
         }
 
         public bool EditTipos(String id, String descripcion, String idGrupoEntidad, String comentario, String sStatus, int noEliminable)
         {
-            return objGrupoEntidad.EditDatos(Convert.ToInt32(id), descripcion, Convert.ToInt32(idGrupoEntidad), comentario, sStatus, noEliminable);
+            if(descripcion.Equals("") || idGrupoEntidad.Equals("") || comentario.Equals("") || sStatus.Equals("") || noEliminable.ToString().Equals(""))
+            {
+                return false;
+            }else { return objGrupoEntidad.EditDatos(Convert.ToInt32(id), descripcion, Convert.ToInt32(idGrupoEntidad), comentario, sStatus, noEliminable); }
         }
     }
 }

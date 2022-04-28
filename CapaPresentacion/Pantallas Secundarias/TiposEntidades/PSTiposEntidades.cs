@@ -77,7 +77,7 @@ namespace CapaPresentacion.Pantallas_Secundarias.TiposEntidades
                 {
                     MessageBox.Show("Se ha creado con exito");
                 }
-                else { MessageBox.Show("Ha ocurrido un error, no se a podio crear."); }
+                else { MessageBox.Show("Debes llenar todos los campos."); }
             }
             else
             {
@@ -85,7 +85,7 @@ namespace CapaPresentacion.Pantallas_Secundarias.TiposEntidades
                 {
                     MessageBox.Show("Se ha editado con exito");
                 }
-                else { MessageBox.Show("Ha ocurrido un error, no se a podido editar."); }
+                else { MessageBox.Show("Debes llenar todos los campos."); }
             }
         }
 

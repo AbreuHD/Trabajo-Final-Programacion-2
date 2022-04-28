@@ -54,14 +54,14 @@ namespace CapaPresentacion.Pantallas_Secundarias
                 {
                     MessageBox.Show("Se ha creado con exito");
                 }
-                else { MessageBox.Show("Ha ocurrido un error, no se a podido crear."); }
+                else { MessageBox.Show("Debes llenar todos los campos."); }
             }else
             {
                 if (objeGrupoEntidades.EditDatos(id, tBDescripcion.Text, tBComentario.Text, cBEstatus.Text, eliminable))
                 {
                     MessageBox.Show("Se ha editado con exito");
                 }
-                else { MessageBox.Show("Ha ocurrido un error, no se a podido editar."); }
+                else { MessageBox.Show("Debes llenar todos los campos."); }
             }
         }
 
