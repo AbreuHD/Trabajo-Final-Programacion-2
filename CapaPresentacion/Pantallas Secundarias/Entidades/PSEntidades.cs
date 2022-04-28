@@ -27,12 +27,12 @@ namespace CapaPresentacion.Pantallas_Secundarias
         bool eliminable;
         String accion;
         String botonInfo;
-        String userNameEntidad; 
-        String passworEntidad; 
+        String userNameEntidad;
+        String passworEntidad;
         String descripcion;
-        String direccion; 
-        String localidad; 
-        String tipoEntidad; 
+        String direccion;
+        String localidad;
+        String tipoEntidad;
         String tipoDocumento;
         String telefono; 
         String uRLPaginaWeb; 
@@ -43,6 +43,7 @@ namespace CapaPresentacion.Pantallas_Secundarias
         String rolUserEntidad; 
         String comentario;
         String sStatus;
+
 
         public PSEntidades( String accion = "", String botonInfo = "", String userNameEntidad = "", String passworEntidad = "", String descripcion = "",
                             String direccion = "", String localidad = "", String tipoEntidad = "0", String tipoDocumento = "0",
@@ -168,11 +169,11 @@ namespace CapaPresentacion.Pantallas_Secundarias
                 {
                     MessageBox.Show("Creacion Exitosa.");
                 }
-                else { MessageBox.Show("Ha ocurrido un error, no se a podido crear."); }
+                else { MessageBox.Show("Debes llenar todos los campos."); }
 
             }
 
-            
+
         }
 
         private void tBUsuario_Validated(object sender, EventArgs e)
@@ -197,7 +198,8 @@ namespace CapaPresentacion.Pantallas_Secundarias
             }
             else
             {
-                epError.Clear();
+                epError.SetError(tBPassword, "Escribe una contraseña.");
+                tBPassword.Focus();
             }
 
         }

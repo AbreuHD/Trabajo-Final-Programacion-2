@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NetFramework.Layers.WinApp;
 
 namespace CapaPresentacion
 {
@@ -16,9 +17,14 @@ namespace CapaPresentacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            NetFramework.Layers.WinApp.Login login = new NetFramework.Layers.WinApp.Login();
-            login.Show();
+            SplashScreen sp = new SplashScreen();
+            if (sp.ShowDialog() == DialogResult.OK)
+            {
+                Login login = new Login();
+                login.Show();
+            }
             Application.Run();
+
         }
     }
 }

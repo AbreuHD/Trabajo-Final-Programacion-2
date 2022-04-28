@@ -59,5 +59,15 @@ namespace NetFramework.Layers.WinApp.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ShellPoint {
+            get {
+                object obj = ResourceManager.GetObject("ShellPoint", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
