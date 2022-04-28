@@ -177,7 +177,7 @@ namespace CapaPresentacion.Pantallas_Secundarias
 
         private void tBUsuario_Validated(object sender, EventArgs e)
         {
-            if (tBUsuario.Text == string.Empty)
+            if (tBUsuario.Text==string.Empty)
             {
                 epError.SetError(tBUsuario, "Escribe un nombre de usuario.");
                 tBUsuario.Focus();
@@ -190,7 +190,7 @@ namespace CapaPresentacion.Pantallas_Secundarias
 
         private void tBPassword_Validated(object sender, EventArgs e)
         {
-            if (tBPassword.Text == string.Empty)
+            if (tBPassword.Text==string.Empty)
             {
                 epError.SetError(tBPassword, "Escribe una contraseña.");
                 tBPassword.Focus();
@@ -204,7 +204,7 @@ namespace CapaPresentacion.Pantallas_Secundarias
 
         private void tbDireccion_Validated(object sender, EventArgs e)
         {
-            if (tbDireccion.Text == string.Empty)
+            if (tbDireccion.Text==string.Empty)
             {
                 epError.SetError(tbDireccion, "Escribe una direccion.");
                 tbDireccion.Focus();
